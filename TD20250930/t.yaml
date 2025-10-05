@@ -1,0 +1,55 @@
+tests:
+  - name: test 1 
+    stdin: "5.972e24 7.348e22 3.844e8"
+    stdout:
+      - contains: "1.98e+20"
+
+  - name: test 2 
+    stdin: "5.972e24 1.988e30 1.496e11"
+    stdout:
+      - contains: "3.54e+22"
+
+  - name: test 3 
+    stdin: "5.972e24 4.2e5 6.7e5"
+    stdout:
+      - contains: "3.73e+08"
+
+  - name: test 4 
+    stdin: "1 5.972e24 6.371e6"
+    stdout:
+      - contains: "9.81e+00"
+
+  - name: test 5 
+    stdin: "5.972e24 1 6.371e6"
+    stdout:
+      - contains: "9.81e+00"
+
+  - name: test 6
+    stdin: "-5 4.2e5 6.7e5"
+    stdout:
+      - contains: "Error, the mass 1 must be greater than 0"
+
+  - name: test 7
+    stdin: "5 -4.2e5 6.7e5"
+    stdout:
+      - contains: "Error, the mass 2 must be greater than 0"
+
+  - name: test 8
+    stdin: "5 4.2e5 -6.7e5"
+    stdout:
+      - contains: "Error, the distance must be greater than 0"
+
+  - name: test 9
+    stdin: "1.9e308 4.2e5 6.7e5"
+    stdout:
+      - contains: "Error Overflow, the mass 1 must be less than 1.7e308 "
+
+  - name: test 10
+    stdin: "1 1.9e308 6.7e5"
+    stdout:
+      - contains: "Error Overflow, the mass 2 must be less than 1.7e308 "
+
+  - name: test 11
+    stdin: "1 1 1.9e308"
+    stdout:
+      - contains: "Error Overflow, the distance must be less than 1.7e308 "
