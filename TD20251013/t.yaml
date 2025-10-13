@@ -1,0 +1,40 @@
+tests:
+  - name: test 1 
+    stdin: "245.27 240 341"
+    stdout:
+      - contains: "29.91 $"
+
+  - name: test 2 
+    stdin: "400 300 365"
+    stdout:
+      - contains: "110.82 $"
+
+  - name: test 3
+    stdin: "-500 400 500"
+    stdout:
+      - contains: "Error, the share price must be greater than 0"
+
+  - name: test 4
+    stdin: "500 -400 500"
+    stdout:
+      - contains: "Error, the strike price must be greater than 0"
+
+  - name: test 5
+    stdin: "500 400 -500"
+    stdout:
+      - contains: "Error, the number of days must be greater than 0"
+
+  - name: test 6
+    stdin: "1.9e308 400 500"
+    stdout:
+      - contains: "Error Overflow, the share price must be less than 1.7e308"
+
+  - name: test 7
+    stdin: "500 1.9e308 500"
+    stdout:
+      - contains: "Error Overflow, the strike price must be less than 1.7e308"
+
+  - name: test 8
+    stdin: "500 400 1.9e308"
+    stdout:
+      - contains: "Error Overflow, the number of days must be less than 1.7e308"
