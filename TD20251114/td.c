@@ -2,15 +2,15 @@
 #include <math.h>
 #include <stdbool.h>
 
-const double ACCEL_TRAIN_A = 1.33;
-const double ACCEL_TRAIN_B = 0.52;
-const unsigned int TEMPS_ACCEL_TRAIN_A = 10;
-const unsigned int TEMPS_ACCEL_TRAIN_B = 20;
-const unsigned int TEMPS_DELTA = 1;
 
 int main(void)
 {
     bool croisement_effectuee = false;
+    const double ACCEL_TRAIN_A = 1.33;
+    const double ACCEL_TRAIN_B = 0.52;
+    const unsigned int TEMPS_ACCEL_TRAIN_A = 10;
+    const unsigned int TEMPS_ACCEL_TRAIN_B = 20;
+    const unsigned int TEMPS_DELTA = 1;
     double pA = 0;
     double vA = 0;
     double pB = 0;
