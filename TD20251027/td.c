@@ -1,4 +1,33 @@
 #include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(void)
+{
+	long max_value = 0;
+	bool number_ok = false;
+	printf("Nombre permiers jusqu'au nombre : ");
+	scanf("%ld", &max_value);
+
+	for (volatile long int i = 2; i <= max_value; i++)
+	{
+		number_ok = false;
+		for (volatile long j = 2; j <= sqrt(i);j++)
+		{
+			if (i%j == 0)
+				number_ok = true;
+		}
+		
+		if (!number_ok)
+		{
+			printf(" %ld \n", i);
+		}
+	}
+	return 0;
+}
+
+#if 0
+#include <stdio.h>
 
 int main(int argc, const char *argv[])
 {
@@ -41,3 +70,4 @@ int main(int argc, const char *argv[])
 	}
 		return 0;
 }
+#endif
