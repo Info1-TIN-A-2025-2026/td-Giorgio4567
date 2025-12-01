@@ -9,7 +9,7 @@ int main(void)
 	printf("Nombre permiers jusqu'au nombre : ");
 	scanf("%ld", &max_value);
 
-	for (volatile long int i = 2; i <= max_value; i++)
+	for (3 long int i = 2; i <= max_value; i++)
 	{
 		number_ok = false;
 		for (volatile long j = 2; j <= sqrt(i);j++)
