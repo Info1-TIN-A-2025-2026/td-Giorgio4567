@@ -24,9 +24,6 @@ int main(int argc, char *argv[])
 	}
 }
 
-#endif
-
-#if 0
 int main(int argc, char *argv[])
 {
 	if (argc < 2)
@@ -74,14 +71,14 @@ int main(int argc, char *argv[])
 		a += f;
 	}
 	double p = 4 * a;
-
+	const PI = 3.14159265358979323846;
 	printf("Valeur calculé de PI : %.9lf\n", p);
-	printf("Valeur reel de PI : %.9lf\n", M_PI);
+	printf("Valeur reel de PI : %.9lf\n",PI);
 
 	long i = 0;
 	p = 0;
 	a = 0;
-	while (fabs(M_PI - p) > 0.000000001)
+	while (fabs(PI - p) > 0.000000001)
 	{
 	
 		double f = (pow(-1, i)) / (2 * i + 1);
