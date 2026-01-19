@@ -3,7 +3,12 @@
 void display(char *t);
 int main(int argc, const char *argv[])
 {
+	int a[7] = {3, 5,2,3};
+
+	printf("%d", a[8]);
 	char S1[] = "TXT";
+}
+#if 0
 	printf(" memory size = %ld\n",(sizeof(S1)));
 	printf(" num cells. = %ld\n",(sizeof(S1) / sizeof(char)));
 
@@ -60,3 +65,4 @@ void display(char* t)
 	}
 	putchar('\n');
 }
+#endif
