@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>
 #define x 8
 #define y 4
 #define z 4
@@ -35,7 +35,12 @@ int main(int argc, const char *argv[])
 
 	char d[100] = "de la merde cette journée";
 	char* e = strstr(d,"merde");
+	int n = 0;
+	if (argc > 1)
+		n = atoi(argv[1]);
 
 	printf("%p\n", e);
+
+	printf("|0x%05x|\n", (unsigned char) 201);
 	return 0;
 }
